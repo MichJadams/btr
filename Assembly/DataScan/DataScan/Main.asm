@@ -6,7 +6,6 @@
 ;intArray SWORD 0,0,0,0
 
 intArray SWORD 0,0,0,0,4,18,50 ; example of an array with some non zero values 
-
 .code 
 start	proc 
 		 mov ebx, OFFSET intArray
