@@ -20,11 +20,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
+    <MASM Include="main.asm">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LoopingAdder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    </MASM>
   </ItemGroup>
 </Project>

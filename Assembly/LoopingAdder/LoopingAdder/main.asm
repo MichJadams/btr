@@ -4,13 +4,28 @@
 .model flat 
 
 .data 
-intArray SWORD 10,5,10,50 ; the array to add 
-multiplier BYTE 5  ; add everything 5 times
+intArray DWORD 5,4,3 ; the array to add 
+multiplier DWORD 2  ; add everything 5 times
 
 .code 
 main	proc 
-		;write the code here
-		mov
 
+		mov EDI, OFFSET intArray
+		mov ECX, LENGTHOF intArray
+		mov ESI, multiplier
+		mov EAX, 0 
+
+L1: 
+		add eax, [edi]
+		add edi, TYPE intArray
+		loop L1
+
+		mov EDI, OFFSET intArray
+		mov ECX, LENGTHOF intArray
+		sub ESI, 1 
+		CMP ESI, 0
+		JNE L1
+
+		ret
 main ENDP 
 END main 
