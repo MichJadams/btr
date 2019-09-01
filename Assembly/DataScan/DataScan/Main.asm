@@ -10,11 +10,8 @@ intArray SWORD 0,0,0,0,4,18,50 ; example of an array with some non zero values
 start	proc 
 		 mov ebx, OFFSET intArray
 		 mov ecx, LENGTHOF intArray
-		 mov eax, 0  ; zero out eax, our accumulator 
-L1:		
-		add eax, [edi]
-		add edi, TYPE intArray
 
+L1:		
 		cmp WORD PTR[ebx], 0
 		jnz		found 
 		add		ebx,2
