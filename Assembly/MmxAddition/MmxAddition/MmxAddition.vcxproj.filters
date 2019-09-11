@@ -18,6 +18,12 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MiscDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MmxVal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -26,5 +32,13 @@
     <ClCompile Include="MmxAddition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MmxVal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Mmx_addition.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

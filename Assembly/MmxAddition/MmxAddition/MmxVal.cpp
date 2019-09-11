@@ -1,3 +1,5 @@
+#include "pch.h"
+
 #include "MmxVal.h"
 #include <cstdio>
 
@@ -19,7 +21,7 @@ char * MmxVal::ToString_i32(char *s, size_t len)
 	return s;
 }
 
-char * MmxVal::ToString_u64(char *s, size_t len)
+char * MmxVal::ToString_i64(char *s, size_t len)
 {
 	sprintf_s(s,len, "%16lld", i64);
 
