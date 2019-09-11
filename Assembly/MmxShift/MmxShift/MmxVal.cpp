@@ -5,25 +5,25 @@
 
 char * MmxVal::ToString_i8(char *s, size_t len)
 {
-	sprintf_s(s,len, "%4d %4d %4d %4d %4d %4d %4d %4d",i8[0], i8[1], i8[2], i8[3], i8[4], i8[5], i8[6], i8[7]);
+	sprintf_s(s, len, "%4d %4d %4d %4d %4d %4d %4d %4d", i8[0], i8[1], i8[2], i8[3], i8[4], i8[5], i8[6], i8[7]);
 	return s;
 }
 
 char * MmxVal::ToString_i16(char *s, size_t len)
 {
-	sprintf_s(s,len, "%8d %8d %8d %8d", i16[0], i16[1], i16[2], i16[3]);
+	sprintf_s(s, len, "%8d %8d %8d %8d", i16[0], i16[1], i16[2], i16[3]);
 	return s;
 }
 
 char * MmxVal::ToString_i32(char *s, size_t len)
 {
-	sprintf_s(s,len, "%12d %12d", i32[0], i32[1]);
+	sprintf_s(s, len, "%12d %12d", i32[0], i32[1]);
 	return s;
 }
 
 char * MmxVal::ToString_i64(char *s, size_t len)
 {
-	sprintf_s(s,len, "%16lld", i64);
+	sprintf_s(s, len, "%16lld", i64);
 
 	return s;
 }
