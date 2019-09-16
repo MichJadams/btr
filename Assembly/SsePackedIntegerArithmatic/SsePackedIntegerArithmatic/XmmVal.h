@@ -13,7 +13,8 @@ union XmmVal
 	UInt16	u16[8];
 	UInt32	u32[4];
 	UInt64	u64[2];
-
+	float	r32[4];
+	double	r64[2];
 
 	char*	ToString_i8(char *s, size_t len);
 	char*	ToString_i16(char *s, size_t len);
@@ -30,4 +31,8 @@ union XmmVal
 	char*	ToString_x16(char *s, size_t len);
 	char*	ToString_x32(char *s, size_t len);
 	char*	ToString_x64(char *s, size_t len);
+
+	char*	ToString_r32(char *s, size_t len);
+	char*	ToString_r64(char *s, size_t len);
+
 };

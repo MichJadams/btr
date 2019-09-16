@@ -87,6 +87,20 @@ char * XmmVal::ToString_x64(char *s, size_t len)
 
 	return s;
 }
+
+char * XmmVal::ToString_r32(char *s, size_t len)
+{
+	sprintf_s(s, len, "%6.4lf, %6.4lf", r32[0], r32[1]);
+
+	return s;
+}
+
+char * XmmVal::ToString_r64(char *s, size_t len)
+{
+	sprintf_s(s, len, "%6.4lf", r64[0]);
+
+	return s;
+}
 //
 //char * MmxVal::ToString_x8(char *s, size_t len)
 //{

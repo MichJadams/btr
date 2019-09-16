@@ -6,6 +6,7 @@ typedef __int16	Int16;
 typedef __int32 Int32;
 typedef __int64 Int64; 
 
+
 //unsigned int data types
 typedef unsigned __int8		UInt8;
 typedef unsigned __int16	UInt16;

@@ -1,44 +1,43 @@
 #include "pch.h"
 #include <iostream>
 #include "XmmVal.h"
+#include <math.h>
 
-extern "C" void SsePackedInt16_add(XmmVal * a, XmmVal *b, XmmVal c[2]);
+extern "C" void SsePackedInt16_add(const XmmVal * a,const XmmVal *b, XmmVal c[2]);
 extern "C" void SsePackedInt32_sub(const XmmVal * a, const XmmVal *b, XmmVal *c);
 extern "C" void SsePackedInt32_mul(const XmmVal * a, const XmmVal *b, XmmVal c[2]);
 
 int main()
 {
-	XmmVal a, b;
-	XmmVal c[2];
+	_declspec(align(16)) XmmVal a;
+	_declspec(align(16)) XmmVal b;
+	_declspec(align(16))  XmmVal c[2];
 	int count; 
 	char buff[256]; 
 
-	a.i16[0] = 10; 
-	a.i16[1] = 10;
-	a.i16[2] = 10;
-	a.i16[3] = 10;
-	a.i16[4] = 10;
-	a.i16[5] = 10;
-	a.i16[6] = 10;
-	a.i16[7] = 10;
-	a.i16[8] = 10;
-	a.i16[9] = 10;
-	a.i16[10] = 10;
+	a.r32[0] = 10; 
+	a.r32[1] = 10;
+	a.r32[2] = 10;
+	a.r32[3] = 10;
 
-	b.i16[0] = 400;
-	b.i16[1] = 400;
-	b.i16[2] = 400;
-	b.i16[3] = 400;
-	b.i16[4] = 400;
-	b.i16[5] = 400;
-	b.i16[6] = 400;
-	b.i16[7] = 400;
-	b.i16[8] = 400;
-	b.i16[9] = 400;
-	b.i16[10] = 400;
+
+	b.r32[0] = 10;
+	b.r32[1] = 30;
+	b.r32[2] = 40;
+	b.r32[3] = 50;
+
 
 	SsePackedInt16_add(&a, &b, c);
-	printf("result:");
-	printf("c: %s", c->ToString_i16(buff, sizeof(buff)));
+	printf("result: \n");
+	printf("c: %s\n", c[0].ToString_r32(buff, sizeof(buff)));
+	printf("c: %s\n", c[1].ToString_r32(buff, sizeof(buff)));
+	printf("c: %s\n", c[2].ToString_r32(buff, sizeof(buff)));
+	printf("c: %s\n", c[3].ToString_r32(buff, sizeof(buff)));
+	printf("c: %s\n", c[4].ToString_r32(buff, sizeof(buff)));
+	printf("c: %s\n", c[5].ToString_r32(buff, sizeof(buff)));
+	printf("c: %s\n", c[6].ToString_r32(buff, sizeof(buff)));
+
+
+
 
 }
