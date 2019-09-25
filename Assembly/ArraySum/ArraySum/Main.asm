@@ -10,8 +10,8 @@ Start	proc
 		mov ecx, LENGTHOF intArray
 		mov eax, 0
 LP: 
-	add eax, [edi]
-	add edi, TYPE intArray
+	add BYTE PTR myArray[ecx], [edi]
+	add ecx, TYPE intArray
 	loop LP 
 	ret 
 Start endp
