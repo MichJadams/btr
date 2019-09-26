@@ -2,7 +2,7 @@
 .model flat
 
 .data 
-ArrayToSort		BYTE	3,2,1,6,7
+ArrayToSort		dw	5,4,10,2,1
 
 .code 
 QuickSort		proc 
@@ -13,18 +13,36 @@ QuickSort		proc
 		mov		edx, ecx
 		sar		edx, 1	; divide esi by 2 
 
+		; eax = low value
+		; ecx = high value
+		; edx = pivot
 Partition: 
-		mov		al, BYTE PTR ArrayToSort[edx]	; this is the pivot
-		cmp		[edi], al						; compare the pivot to the current element 
+		mov		edx, dword ptr ArrayToSort[ecx]	; pivot = arr[high]
+		sub		eax, 1							; i = the index of the smaller element
+
+PartitionLoop:
+
+		cmp		edx, dword PTR ArrayToSort[ecx]	; compare the pivot to the current element 
+
+		;if the current element is smaller than the pivot 
 		jg		Swap							; jump to swap if the item is greater than the pivot
 	
-		loop	Partition						; loop uses the ecx register to count down its looping
+		loop	PartitionLoop					; loop uses the ecx register to count down its looping
+		
+		;
 		jmp Sort
 Swap:
-; swap the two using exchange 
-		mov		ah, [edi]
-		mov		[edi], al 
-		mov		BYTE PTR ArrayToSort[edx], ah 
+		; swap the two using exchange 
+		; incremenet the index of the smaller element (low)
+		inc		eax
+		;swap the array at edx and eax, using the stack? yess.....
+		push  ArrayToSort[eax]
+		push  ArrayToSort[edx]
+
+		pop  ArrayToSort[eax]
+		pop  ArrayToSort[edx]
+	
+
 		jmp		Partition
 		
 Sort: 
