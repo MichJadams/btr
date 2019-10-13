@@ -38,9 +38,27 @@ int merge(int* lptr, int* rptr, int rightSize, int leftSize, int* resptr, int re
 	}
 }
 
-sort()
+sort(int *ptrArr, int arrLength)
 {
+	if (arrLength < 2)
+	{
+		if (ptrArr[0] > ptrArr[1])
+		{
+			int temp = ptrArr[0];
+			ptrArr[0] = ptrArr[1];
+			ptrArr[1] = temp;
+		}
+	}
+}
 
+mergeSort(int *ptrArr, int arrLength)
+{
+	for (int i = 0; i < arrLength; i++)
+	{
+		// I duno
+	}
+
+	merge();
 }
 
 main()
