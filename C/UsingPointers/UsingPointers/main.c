@@ -25,4 +25,5 @@ void main()
 
 	printf("now p has been redefined to point to the address %p\n", p);
 	printf("b has the address %p\n", &b);
+
 }
